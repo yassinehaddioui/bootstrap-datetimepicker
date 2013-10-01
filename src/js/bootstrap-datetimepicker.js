@@ -971,8 +971,8 @@
           if (expanded && expanded.length) {
             var collapseData = expanded.data('collapse');
             if (collapseData && collapseData.transitioning) return;
-            expanded.collapse('hide');
-            closed.collapse('show')
+            expanded.hide().removeClass('in');
+			closed.show().addClass('in');
             $this.find('i').toggleClass(self.timeIcon + ' ' + self.dateIcon);
             self.$element.find('.add-on i').toggleClass(self.timeIcon + ' ' + self.dateIcon);
           }
